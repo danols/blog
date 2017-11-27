@@ -1,0 +1,69 @@
+
+{
+  // @User
+  "user": {
+    "_id": 1,
+    "name": "Daniel López",
+    "username": "danols",
+    "password": "12345678",
+    "avatar": "https://www.blogcdn.com/avatar/danols",
+    "language": "en",
+    "bio": "Software Developer, very passionate about technology.",
+    "email": "dano@maildots.com",
+
+    "bookmarks": [1],
+    "posts": [1],
+    "subscriptions": ["tech","dev"],
+    "following":[2],
+    "followers":[2]
+  },
+
+  // @Post
+  "post": {
+    "_id": 1,
+    "title": "Awesome Node JS",
+    "subtitle": "Why you should use node js",
+    "content": "",
+    "date": 87287891221,
+    "language": "en",
+    "status": "draft",
+
+    "tags": ["tech","dev","js"],
+
+    "owner": 1,
+    "likes": [1]
+  },
+
+  //@Tags tree-document?????
+  "tags": {
+    "_id": 1,
+    "name": "dev",
+    "posts": [1],
+    "language": "es"
+  },
+
+  //@Comments V1
+  "commentsv1": {
+    "_id": 1,
+    "post": 1,
+    "content": "help!!!",
+    "user": 1,
+    "date": 2232323,
+    "subcomments": [
+      {
+        "content": "whats up?",
+        "user": 1,
+        "date": 2232323
+      }
+    ]
+  },
+   //@Comments V1
+   "commentsv2": {
+    "_id": 1,
+    "post": 1,
+    "content": "help!!!",
+    "user": 1,
+    "date": 2232323,
+    "thread_id": 1
+  }
+}
