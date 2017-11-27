@@ -64,3 +64,4 @@ client/bower_components
 
 # Yarn Integrity file
 .yarn-integrity
+server/package-lock.json
