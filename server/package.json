@@ -9,9 +9,11 @@
   "author": "danols",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "mongoose": "^4.13.5"
   },
   "devDependencies": {
+    "@types/dotenv": "^4.0.2",
     "@types/mongoose": "^4.7.28"
   }
 }
