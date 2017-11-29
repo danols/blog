@@ -1,20 +1,20 @@
 import { User, UserBuilder } from '../../../domain/model/User'
-import { default as MongoUser } from '../../mongoose/model/MongoUser';
+import { default as MongoUser, MongoUserModel } from '../../mongoose/model/MongoUser';
 
 export class UserMapper {
-  map (mongoUser: any): User {
+  map (mongoUserModel: MongoUserModel): User {
     return new UserBuilder()
-    .setName(mongoUser.name)
-    .setUsername(mongoUser.username)
-    .setEmail(mongoUser.email)
-    .setAvatar(mongoUser.avatar)
-    .setLanguage(mongoUser.laguage)
-    .setBio(mongoUser.bio)
-    .setBookmarks(mongoUser.bookmarks)
-    .setPosts(mongoUser.posts)
-    .setSubscriptions(mongoUser.subscriptions)
-    .setFollowers(mongoUser.followers)
-    .setFollowing(mongoUser.following)
+    .setName(mongoUserModel.name)
+    .setUsername(mongoUserModel.username)
+    .setEmail(mongoUserModel.email)
+    .setAvatar(mongoUserModel.avatar)
+    .setLanguage(mongoUserModel.language)
+    .setBio(mongoUserModel.bio)
+    .setBookmarks(mongoUserModel.bookmarks)
+    .setPosts(mongoUserModel.posts)
+    .setSubscriptions(mongoUserModel.subscriptions)
+    .setFollowers(mongoUserModel.followers)
+    .setFollowing(mongoUserModel.following)
     .build()
   }
 }

@@ -26,11 +26,11 @@ export class User {
   }
 
   get Name (): string { return this.name }
-  get Username (): string { return this.name }
-  get Email (): string { return this.name }
-  get Avatar (): string { return this.name }
-  get Language (): string { return this.name }
-  get Bio (): string { return this.name }
+  get Username (): string { return this.username }
+  get Email (): string { return this.email }
+  get Avatar (): string { return this.avatar }
+  get Language (): string { return this.language }
+  get Bio (): string { return this.bio }
   get Bookmarks (): string[] { return this.bookmarks }
   get Posts (): string[] { return this.posts }
   get Subscriptions (): string[] { return this.subscriptions }
@@ -55,15 +55,15 @@ export class UserBuilder {
 
   get Name (): string { return this.name }
 
-  get Username (): string { return this.name }
+  get Username (): string { return this.username }
 
-  get Email (): string { return this.name }
+  get Email (): string { return this.email }
 
-  get Avatar (): string { return this.name }
+  get Avatar (): string { return this.avatar }
 
-  get Language (): string { return this.name }
+  get Language (): string { return this.language }
 
-  get Bio (): string { return this.name }
+  get Bio (): string { return this.bio }
 
   get Bookmarks (): string[] { return this.bookmarks }
 

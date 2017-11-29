@@ -1,7 +1,7 @@
-import { default as MongoUser } from './model/MongoUser';
+import { default as MongoUser, MongoUserModel } from './model/MongoUser';
 
 export class UserDb {
-  getUser (id: string) {
+  getUser (id: string): Promise<MongoUserModel> {
     let query = MongoUser.findById(id);
     return query.exec();
   }

@@ -17,5 +17,20 @@ const _schema = new Mongoose.Schema({
   
 }, { timestamps: false });
 
-const MongoUser = Mongoose.model('User', _schema);
+export type MongoUserModel = Mongoose.Document & {
+  name: string,
+  username: string,
+  email: string,
+  password: string,
+  avatar: string,
+  language: string,
+  bio: string,
+  bookmarks: string[],
+  posts: string[],
+  subscriptions: string[],
+  following: string[],
+  followers: string[]
+}
+
+const MongoUser = Mongoose.model<MongoUserModel>('User', _schema);
 export default MongoUser;
