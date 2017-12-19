@@ -3,17 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "author": "danols",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "dotenv": "^4.0.0",
-    "mongoose": "^4.13.5"
+    "express": "^4.16.2",
+    "inversify": "^4.9.0",
+    "inversify-binding-decorators": "^3.2.0",
+    "inversify-express-utils": "^5.2.0",
+    "mongoose": "^4.13.5",
+    "reflect-metadata": "^0.1.10"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.16.8",
+    "@types/cors": "^2.8.3",
     "@types/dotenv": "^4.0.2",
+    "@types/express": "^4.0.39",
     "@types/mongoose": "^4.7.28"
   }
 }
