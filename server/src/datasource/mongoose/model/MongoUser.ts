@@ -7,11 +7,11 @@ const _schema = new Mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
   avatar: String,
-  language: String,
+  public: Boolean,
   bio: String,
-  bookmarks: [String],
+  likes: [String],
   posts: [String],
-  subscriptions: [String],
+  reposts: [String],
   following: [String],
   followers: [String]
   
@@ -23,11 +23,11 @@ export type MongoUserModel = Mongoose.Document & {
   email: string,
   password: string,
   avatar: string,
-  language: string,
+  public: boolean,
   bio: string,
-  bookmarks: string[],
+  likes: string[],
   posts: string[],
-  subscriptions: string[],
+  reposts: string[],
   following: string[],
   followers: string[]
 }
