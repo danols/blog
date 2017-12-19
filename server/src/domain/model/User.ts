@@ -2,25 +2,27 @@ export class User {
   private name: string;
   private username: string;
   private email: string;
+  private password: string; 
   private avatar: string;
-  private language: string;
+  private public: boolean;
   private bio: string;
-  private bookmarks: string[];
   private posts: string[];
-  private subscriptions: string[];
   private following: string[];
   private followers: string[];
+  private likes: string[];
+  private reposts: string[];
 
   constructor (builder: UserBuilder) {
     this.name = builder.Name;
     this.username = builder.Username;
     this.email = builder.Email;
+    this.password = builder.Password;
     this.avatar = builder.Avatar;
-    this.language = builder.Language;
+    this.public = builder.Public;
     this.bio = builder.Bio;
-    this.bookmarks = builder.Bookmarks;
+    this.likes = builder.Likes;
     this.posts = builder.Posts;
-    this.subscriptions = builder.Subscriptions;
+    this.reposts = builder.Reposts;
     this.following = builder.Following;
     this.followers = builder.Followers;
   }
@@ -29,11 +31,12 @@ export class User {
   get Username (): string { return this.username }
   get Email (): string { return this.email }
   get Avatar (): string { return this.avatar }
-  get Language (): string { return this.language }
+  get Password (): string { return this.password }
+  get Public (): boolean { return this.public }
   get Bio (): string { return this.bio }
-  get Bookmarks (): string[] { return this.bookmarks }
+  get Likes (): string[] { return this.likes }
   get Posts (): string[] { return this.posts }
-  get Subscriptions (): string[] { return this.subscriptions }
+  get Reposts (): string[] { return this.reposts }
   get Following (): string[] { return this.following }
   get Followers (): string[] { return this.followers }
 }
@@ -42,37 +45,29 @@ export class UserBuilder {
   private name: string;
   private username: string;
   private email: string;
+  private password: string; 
   private avatar: string;
-  private language: string;
+  private public: boolean;
   private bio: string;
-  private bookmarks: string[];
   private posts: string[];
-  private subscriptions: string[];
   private following: string[];
   private followers: string[];
+  private likes: string[];
+  private reposts: string[];
 
   constructor () {}
 
   get Name (): string { return this.name }
-
   get Username (): string { return this.username }
-
   get Email (): string { return this.email }
-
   get Avatar (): string { return this.avatar }
-
-  get Language (): string { return this.language }
-
+  get Password (): string { return this.password }
+  get Public (): boolean { return this.public }
   get Bio (): string { return this.bio }
-
-  get Bookmarks (): string[] { return this.bookmarks }
-
+  get Likes (): string[] { return this.likes }
   get Posts (): string[] { return this.posts }
-
-  get Subscriptions (): string[] { return this.subscriptions }
-
+  get Reposts (): string[] { return this.reposts }
   get Following (): string[] { return this.following }
-
   get Followers (): string[] { return this.followers }
 
   setName (name: string): UserBuilder { 
@@ -90,13 +85,18 @@ export class UserBuilder {
     return this;
   }
 
+  setPassword (password: string): UserBuilder {
+    this.password = password;
+    return this;
+  }
+
   setAvatar (avatar: string): UserBuilder {
     this.avatar = avatar;
     return this;
   }
 
-  setLanguage (language: string): UserBuilder {
-    this.language = language;
+  setPublic (_public: boolean): UserBuilder {
+    this.public = _public;
     return this;
   }
 
@@ -105,8 +105,8 @@ export class UserBuilder {
     return this;
   }
 
-  setBookmarks (bookmarks: string[]): UserBuilder {
-    this.bookmarks = bookmarks;
+  setReposts(reposts: string[]): UserBuilder {
+    this.reposts = reposts;
     return this;
   }
 
@@ -115,8 +115,8 @@ export class UserBuilder {
     return this;
   }
 
-  setSubscriptions (subscriptions: string[]): UserBuilder {
-    this.subscriptions = subscriptions;
+  setLikes (likes: string[]): UserBuilder {
+    this.likes = likes;
     return this;
   }
 
