@@ -1,17 +1,20 @@
+import 'reflect-metadata';
+
+import { provide, inject } from '../IOC';
+import { Types } from '../Types';
+
 import { Result } from '../domain/Result';
 import { User } from '../domain/model/User';
 import { UserRepository } from '../domain/repository/UserRepository';
 
+@provide(Types.GetUser)
 export class GetUser {
   
-  userRespository: UserRepository;
+  @inject(Types.UserRepository)
+  private userRespository: UserRepository;
   
-  constructor (userRespository: UserRepository) {
-    this.userRespository = userRespository;
-  }
-  
-  async execute (id: string): Promise<Result<User>> {
-    let result = await this.userRespository.getUser(id);
+  async execute (userId: string): Promise<Result<User>> {
+    let result = await this.userRespository.getUser(userId);
     return result;
   }
 }
