@@ -1,8 +1,9 @@
 import { default as MongoUser, MongoUserModel } from './model/MongoUser';
+import { ObjectId } from 'bson';
 
 export class UserDb {
   async getUser (id: string): Promise<MongoUserModel> {
-    let query = MongoUser.findById(id);
+    let query = MongoUser.findById(new ObjectId(id));
     let user = await query.exec();
     return user;
   }

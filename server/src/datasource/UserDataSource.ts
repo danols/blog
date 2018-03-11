@@ -17,6 +17,7 @@ export class UserDataSource implements UserRepository {
       let userdb = new UserDb();
       let mapper = new UserMapper();
       let user = await userdb.getUser(id);
+      if (!user) throw new Error('User does not exist');
       return mapper.toUser(user);
     })
   }

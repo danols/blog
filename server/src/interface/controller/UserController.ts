@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { controller, httpGet, httpPost, httpPut, httpDelete } from 'inversify-express-utils';
 import { inject } from 'inversify';
-import { Request } from 'express';
+import { Request, Response } from 'express';
 
 import { Types } from '../../Types';
 
@@ -15,7 +15,8 @@ export class UserController {
   private getUser: GetUser;
 
   @httpGet('/:userId')
-  public getUserById(request: Request): Promise<Result<User>> {
-    return this.getUser.execute(request.params.userId);
+  public async getUserById(request: Request, response: Response): Promise<Result<User>> {
+    let result = await this.getUser.execute(request.params.userId);
+    return result;
   }
 }
